@@ -75,8 +75,8 @@ bm.Set("sp_appid", "sp_appid").
     SetBodyMap("payer", func(bm gopay.BodyMap) {
         bm.Set("sp_openid", "asdas")
     })
-
-wxRsp, err := client.V3TransactionJsapi(bm)
+ctx := context.Background()
+wxRsp, err := client.V3TransactionJsapi(ctx,bm)
 if err != nil {
     xlog.Error(err)
     return
